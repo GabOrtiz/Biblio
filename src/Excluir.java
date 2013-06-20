@@ -151,12 +151,12 @@ public class Excluir extends javax.swing.JFrame {
 
     private void EXlivroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EXlivroActionPerformed
         try{
-            String url = "jdbc:postgresql://localhost:5432/Livros";
-            String usuario = "postgres";
+            String url = "jdbc:mysql://ec2-23-21-211-172.compute-1.amazonaws.com:3306/engsoft2";
+            String usuario = "Ortiz";
             String senha = "1234qwer";
             Connection con = DriverManager.getConnection(url, usuario, senha);
             int x = 0;
-            con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Livros", "postgres", "1234qwer");
+            con = DriverManager.getConnection("jdbc:mysql://ec2-23-21-211-172.compute-1.amazonaws.com:3306/engsoft2", "Ortiz", "1234qwer");
             Statement statement = con.createStatement();
             statement.executeUpdate("delete from titulos where titulo ='"+Ftitulo.getText()+"';"); //+(titulo, numeroedicao, direitos) values('"+Ftitulo.getText()+"','"+Fedicao.getText()+"','"+Fdireitos.getText()+"');");
             Ftitulo.setText("");
@@ -169,12 +169,12 @@ public class Excluir extends javax.swing.JFrame {
 
     private void EXautorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EXautorActionPerformed
         try{
-            String url = "jdbc:postgresql://localhost:5432/Livros";
-            String usuario = "postgres";
+            String url = "jdbc:mysql://ec2-23-21-211-172.compute-1.amazonaws.com:3306/engsoft2";
+            String usuario = "Ortiz";
             String senha = "1234qwer";
             Connection con = DriverManager.getConnection(url, usuario, senha);
             int x = 0;
-            con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Livros", "postgres", "1234qwer");
+            con = DriverManager.getConnection("jdbc:mysql://ec2-23-21-211-172.compute-1.amazonaws.com:3306/engsoft2", "Ortiz", "1234qwer");
             Statement statement = con.createStatement();
             statement.executeUpdate("delete from autores where primeironome ='"+Fnome.getText()+"';");
             Fnome.setText("");

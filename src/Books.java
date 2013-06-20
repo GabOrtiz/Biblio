@@ -1,14 +1,13 @@
-import java.io.IOException;
-import java.io.Reader;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.StringTokenizer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.naming.*;
+import javax.sql.*;
 
 /**
  *
@@ -192,7 +191,7 @@ public class Books extends javax.swing.JFrame {
         );
 
         jLabel1.setFont(new java.awt.Font("Trajan Pro", 1, 24)); // NOI18N
-        jLabel1.setText("AC2 Laboratório de Programação 3");
+        jLabel1.setText("Catálogo de livros BD hospedado");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -211,7 +210,9 @@ public class Books extends javax.swing.JFrame {
                                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(32, 32, 32)
                                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(45, 45, 45)))))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -236,11 +237,11 @@ public class Books extends javax.swing.JFrame {
     //rs = stmt.executeQuery("select * from autores where segundonome = '" +textPesquisar.getText()+ "';");
     private void SobrenomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SobrenomeActionPerformed
         try {
-            String url = "jdbc:postgresql://localhost:5432/Livros";
-            String usuario = "postgres";
+            String url = "jdbc:mysql://ec2-23-21-211-172.compute-1.amazonaws.com:3306/engsoft2";
+            String usuario = "Ortiz";
             String senha = "1234qwer";
             Connection con = DriverManager.getConnection(url, usuario, senha);          
-            con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Livros", "postgres", "1234qwer");
+            con = DriverManager.getConnection("jdbc:mysql://ec2-23-21-211-172.compute-1.amazonaws.com:3306/engsoft2", "Ortiz", "1234qwer");
 
             PreparedStatement findautor = con.prepareStatement("select autorid from autores where segundonome = '" + textPesquisar.getText() + "';");
             ResultSet rs = findautor.executeQuery();
@@ -279,13 +280,13 @@ public class Books extends javax.swing.JFrame {
 
     private void livrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_livrosActionPerformed
         try {
-            String url = "jdbc:postgresql://localhost:5432/Livros";
-            String usuario = "postgres";
+            String url = "jdbc:mysql://ec2-23-21-211-172.compute-1.amazonaws.com:3306/engsoft2";
+            String usuario = "Ortiz";
             String senha = "1234qwer";
             Connection con = DriverManager.getConnection(url, usuario, senha);
             
 
-            con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Livros", "postgres", "1234qwer");
+            con = DriverManager.getConnection("jdbc:mysql://ec2-23-21-211-172.compute-1.amazonaws.com:3306/engsoft2", "Ortiz", "1234qwer");
 
 
             PreparedStatement ps = con.prepareStatement("select * from titulos;");
@@ -306,13 +307,13 @@ public class Books extends javax.swing.JFrame {
 
     private void AutoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AutoresActionPerformed
         try {
-            String url = "jdbc:postgresql://localhost:5432/Livros";
-            String usuario = "postgres";
+            String url = "jdbc:mysql://ec2-23-21-211-172.compute-1.amazonaws.com:3306/engsoft2";
+            String usuario = "Ortiz";
             String senha = "1234qwer";
             Connection con = DriverManager.getConnection(url, usuario, senha);
             
 
-            con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Livros", "postgres", "1234qwer");
+            con = DriverManager.getConnection("jdbc:mysql://ec2-23-21-211-172.compute-1.amazonaws.com:3306/engsoft2", "Ortiz", "1234qwer");
 
 
             PreparedStatement ps = con.prepareStatement("select * from autores;"); // where segundonome = '" +textPesquisar.getText()+ "';"); 
@@ -342,13 +343,13 @@ public class Books extends javax.swing.JFrame {
 
     private void EditoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditoraActionPerformed
         try {
-            String url = "jdbc:postgresql://localhost:5432/Livros";
-            String usuario = "postgres";
+            String url = "jdbc:mysql://ec2-23-21-211-172.compute-1.amazonaws.com:3306/engsoft2";
+            String usuario = "Ortiz";
             String senha = "1234qwer";
             Connection con = DriverManager.getConnection(url, usuario, senha);
             
 
-            con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Livros", "postgres", "1234qwer");
+            con = DriverManager.getConnection("jdbc:mysql://ec2-23-21-211-172.compute-1.amazonaws.com:3306/engsoft2", "Ortiz", "1234qwer");
 
 
             PreparedStatement ps = con.prepareStatement("select * from titulos where direitos = '"+textPesquisar.getText()+"';");  

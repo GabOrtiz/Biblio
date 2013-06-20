@@ -257,16 +257,16 @@ public class Cadastro extends javax.swing.JFrame {
 
     private void CADlivroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CADlivroActionPerformed
         try{
-        String url = "jdbc:postgresql://localhost:5432/Livros";
-        String usuario = "postgres";
+        String url = "jdbc:mysql://ec2-23-21-211-172.compute-1.amazonaws.com:3306/engsoft2";
+        String usuario = "Ortiz";
         String senha = "1234qwer";
         Connection con = DriverManager.getConnection(url, usuario, senha);
         int x = 0;
         
-        con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Livros", "postgres", "1234qwer");
+        con = DriverManager.getConnection("jdbc:mysql://ec2-23-21-211-172.compute-1.amazonaws.com:3306/engsoft2", "Ortiz", "1234qwer");
         
         Statement statement = con.createStatement();
-        statement.executeUpdate("insert into titulos(titulo, numeroedicao, direitos) values('"+Ftitulo.getText()+"','"+Fedicao.getText()+"','"+Fdireitos.getText()+"');"); 
+        statement.executeUpdate("insert into titulos(titulo, edicao, direitos) values('"+Ftitulo.getText()+"','"+Fedicao.getText()+"','"+Fdireitos.getText()+"');"); 
 
         Ftitulo.setText("");
         Fedicao.setText("");
@@ -281,13 +281,13 @@ public class Cadastro extends javax.swing.JFrame {
 
     private void CADautorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CADautorActionPerformed
         try{
-        String url = "jdbc:postgresql://localhost:5432/Livros";
-        String usuario = "postgres";
+        String url = "jdbc:mysql://ec2-23-21-211-172.compute-1.amazonaws.com:3306/engsoft2";
+        String usuario = "Ortiz";
         String senha = "1234qwer";
         Connection con = DriverManager.getConnection(url, usuario, senha);
         int x = 0;
 
-        con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Livros", "postgres", "1234qwer");
+        con = DriverManager.getConnection("jdbc:mysql://ec2-23-21-211-172.compute-1.amazonaws.com:3306/engsoft2", "Ortiz", "1234qwer");
         
         Statement statement = con.createStatement();
         statement.executeUpdate("insert into autores(primeironome, segundonome) values('"+Fnome.getText()+"','"+Fsobrenome.getText()+"');"); 
@@ -304,13 +304,13 @@ public class Cadastro extends javax.swing.JFrame {
 
     private void BvincularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BvincularActionPerformed
         try{
-        String url = "jdbc:postgresql://localhost:5432/Livros";
-        String usuario = "postgres";
+        String url = "jdbc:mysql://ec2-23-21-211-172.compute-1.amazonaws.com:3306/engsoft2";
+        String usuario = "Ortiz";
         String senha = "1234qwer";
         Connection con = DriverManager.getConnection(url, usuario, senha);
         int x = 0;
         
-        con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Livros", "postgres", "1234qwer");
+        con = DriverManager.getConnection("jdbc:mysql://ec2-23-21-211-172.compute-1.amazonaws.com:3306/engsoft2", "Ortiz", "1234qwer");
         
         
         Statement statement = con.createStatement();
