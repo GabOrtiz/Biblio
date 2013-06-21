@@ -150,13 +150,9 @@ public class Excluir extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void EXlivroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EXlivroActionPerformed
-        try{
-            String url = "jdbc:mysql://ec2-23-21-211-172.compute-1.amazonaws.com:3306/engsoft2";
-            String usuario = "Ortiz";
-            String senha = "1234qwer";
-            Connection con = DriverManager.getConnection(url, usuario, senha);
+        try{            
+            Connection con = Conectar.conectar();
             int x = 0;
-            con = DriverManager.getConnection("jdbc:mysql://ec2-23-21-211-172.compute-1.amazonaws.com:3306/engsoft2", "Ortiz", "1234qwer");
             Statement statement = con.createStatement();
             statement.executeUpdate("delete from titulos where titulo ='"+Ftitulo.getText()+"';"); //+(titulo, numeroedicao, direitos) values('"+Ftitulo.getText()+"','"+Fedicao.getText()+"','"+Fdireitos.getText()+"');");
             Ftitulo.setText("");
@@ -169,12 +165,8 @@ public class Excluir extends javax.swing.JFrame {
 
     private void EXautorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EXautorActionPerformed
         try{
-            String url = "jdbc:mysql://ec2-23-21-211-172.compute-1.amazonaws.com:3306/engsoft2";
-            String usuario = "Ortiz";
-            String senha = "1234qwer";
-            Connection con = DriverManager.getConnection(url, usuario, senha);
+            Connection con = Conectar.conectar();
             int x = 0;
-            con = DriverManager.getConnection("jdbc:mysql://ec2-23-21-211-172.compute-1.amazonaws.com:3306/engsoft2", "Ortiz", "1234qwer");
             Statement statement = con.createStatement();
             statement.executeUpdate("delete from autores where primeironome ='"+Fnome.getText()+"';");
             Fnome.setText("");
@@ -234,4 +226,6 @@ public class Excluir extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
+
+    
 }

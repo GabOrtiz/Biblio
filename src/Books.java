@@ -237,11 +237,7 @@ public class Books extends javax.swing.JFrame {
     //rs = stmt.executeQuery("select * from autores where segundonome = '" +textPesquisar.getText()+ "';");
     private void SobrenomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SobrenomeActionPerformed
         try {
-            String url = "jdbc:mysql://ec2-23-21-211-172.compute-1.amazonaws.com:3306/engsoft2";
-            String usuario = "Ortiz";
-            String senha = "1234qwer";
-            Connection con = DriverManager.getConnection(url, usuario, senha);          
-            con = DriverManager.getConnection("jdbc:mysql://ec2-23-21-211-172.compute-1.amazonaws.com:3306/engsoft2", "Ortiz", "1234qwer");
+            Connection con = Conectar.conectar();          
 
             PreparedStatement findautor = con.prepareStatement("select autorid from autores where segundonome = '" + textPesquisar.getText() + "';");
             ResultSet rs = findautor.executeQuery();
@@ -280,15 +276,8 @@ public class Books extends javax.swing.JFrame {
 
     private void livrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_livrosActionPerformed
         try {
-            String url = "jdbc:mysql://ec2-23-21-211-172.compute-1.amazonaws.com:3306/engsoft2";
-            String usuario = "Ortiz";
-            String senha = "1234qwer";
-            Connection con = DriverManager.getConnection(url, usuario, senha);
+            Connection con = Conectar.conectar();
             
-
-            con = DriverManager.getConnection("jdbc:mysql://ec2-23-21-211-172.compute-1.amazonaws.com:3306/engsoft2", "Ortiz", "1234qwer");
-
-
             PreparedStatement ps = con.prepareStatement("select * from titulos;");
             ResultSet rs = ps.executeQuery();
 
@@ -307,14 +296,8 @@ public class Books extends javax.swing.JFrame {
 
     private void AutoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AutoresActionPerformed
         try {
-            String url = "jdbc:mysql://ec2-23-21-211-172.compute-1.amazonaws.com:3306/engsoft2";
-            String usuario = "Ortiz";
-            String senha = "1234qwer";
-            Connection con = DriverManager.getConnection(url, usuario, senha);
+            Connection con = Conectar.conectar();
             
-
-            con = DriverManager.getConnection("jdbc:mysql://ec2-23-21-211-172.compute-1.amazonaws.com:3306/engsoft2", "Ortiz", "1234qwer");
-
 
             PreparedStatement ps = con.prepareStatement("select * from autores;"); // where segundonome = '" +textPesquisar.getText()+ "';"); 
             //PreparedStatement ps = con.prepareStatement("select livrosSN("+textPesquisar.getText()+ ");");   
@@ -343,14 +326,8 @@ public class Books extends javax.swing.JFrame {
 
     private void EditoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditoraActionPerformed
         try {
-            String url = "jdbc:mysql://ec2-23-21-211-172.compute-1.amazonaws.com:3306/engsoft2";
-            String usuario = "Ortiz";
-            String senha = "1234qwer";
-            Connection con = DriverManager.getConnection(url, usuario, senha);
+            Connection con = Conectar.conectar();
             
-
-            con = DriverManager.getConnection("jdbc:mysql://ec2-23-21-211-172.compute-1.amazonaws.com:3306/engsoft2", "Ortiz", "1234qwer");
-
 
             PreparedStatement ps = con.prepareStatement("select * from titulos where direitos = '"+textPesquisar.getText()+"';");  
             ResultSet rs = ps.executeQuery();
