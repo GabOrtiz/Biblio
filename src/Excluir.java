@@ -151,7 +151,8 @@ public class Excluir extends javax.swing.JFrame {
 
     private void EXlivroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EXlivroActionPerformed
         try{            
-            Connection con = Conectar.conectar();
+            //Connection con = Conectar.conmysql();
+            Connection con = Conectar.conpg();
             int x = 0;
             Statement statement = con.createStatement();
             statement.executeUpdate("delete from titulos where titulo ='"+Ftitulo.getText()+"';"); //+(titulo, numeroedicao, direitos) values('"+Ftitulo.getText()+"','"+Fedicao.getText()+"','"+Fdireitos.getText()+"');");
@@ -165,7 +166,8 @@ public class Excluir extends javax.swing.JFrame {
 
     private void EXautorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EXautorActionPerformed
         try{
-            Connection con = Conectar.conectar();
+            //Connection con = Conectar.conmysql();
+            Connection con = Conectar.conpg();
             int x = 0;
             Statement statement = con.createStatement();
             statement.executeUpdate("delete from autores where primeironome ='"+Fnome.getText()+"';");

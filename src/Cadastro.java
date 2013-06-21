@@ -257,7 +257,8 @@ public class Cadastro extends javax.swing.JFrame {
 
     private void CADlivroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CADlivroActionPerformed
         try{
-        Connection con = Conectar.conectar();
+        //Connection con = Conectar.conmysql();
+            Connection con = Conectar.conpg();
         int x = 0;
         
         
@@ -277,7 +278,8 @@ public class Cadastro extends javax.swing.JFrame {
 
     private void CADautorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CADautorActionPerformed
         try{
-        Connection con = Conectar.conectar();
+        //Connection con = Conectar.conmysql();
+            Connection con = Conectar.conpg();
         int x = 0;
 
         
@@ -296,13 +298,14 @@ public class Cadastro extends javax.swing.JFrame {
 
     private void BvincularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BvincularActionPerformed
         try{
-        Connection con = Conectar.conectar();
+        //Connection con = Conectar.conmysql();
+            Connection con = Conectar.conpg();
         int x = 0;
         
         
         
         Statement statement = con.createStatement();
-        statement.executeUpdate("insert into autorisbn(isbn, autid) values('"+Fisbn.getText()+"','"+Fidautor.getText()+"');"); 
+        statement.executeUpdate("insert into autorisbn(isbn, autid) values('"+Fisbn.getText()+"','"+Fidautor.getText()+"');");
         
         Fisbn.setText("");
         Fidautor.setText("");

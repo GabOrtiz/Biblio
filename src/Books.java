@@ -13,7 +13,7 @@ import javax.sql.*;
  *
  * @author Gabriel O. Rhayra S. Dyeniffer S.
  */
-public class Books extends javax.swing.JFrame {
+public class Books extends javax.swing.JFrame{
 
     Connection con;
     Statement stmt;
@@ -237,7 +237,8 @@ public class Books extends javax.swing.JFrame {
     //rs = stmt.executeQuery("select * from autores where segundonome = '" +textPesquisar.getText()+ "';");
     private void SobrenomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SobrenomeActionPerformed
         try {
-            Connection con = Conectar.conectar();          
+            //Connection con = Conectar.conmysql();
+            Connection con = Conectar.conpg(); 
 
             PreparedStatement findautor = con.prepareStatement("select autorid from autores where segundonome = '" + textPesquisar.getText() + "';");
             ResultSet rs = findautor.executeQuery();
@@ -276,7 +277,8 @@ public class Books extends javax.swing.JFrame {
 
     private void livrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_livrosActionPerformed
         try {
-            Connection con = Conectar.conectar();
+            //Connection con = Conectar.conmysql();
+            Connection con = Conectar.conpg();
             
             PreparedStatement ps = con.prepareStatement("select * from titulos;");
             ResultSet rs = ps.executeQuery();
@@ -296,7 +298,8 @@ public class Books extends javax.swing.JFrame {
 
     private void AutoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AutoresActionPerformed
         try {
-            Connection con = Conectar.conectar();
+            //Connection con = Conectar.conmysql();
+            Connection con = Conectar.conpg();
             
 
             PreparedStatement ps = con.prepareStatement("select * from autores;"); // where segundonome = '" +textPesquisar.getText()+ "';"); 
@@ -326,7 +329,8 @@ public class Books extends javax.swing.JFrame {
 
     private void EditoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditoraActionPerformed
         try {
-            Connection con = Conectar.conectar();
+            //Connection con = Conectar.conmysql();
+            Connection con = Conectar.conpg();
             
 
             PreparedStatement ps = con.prepareStatement("select * from titulos where direitos = '"+textPesquisar.getText()+"';");  

@@ -21,11 +21,31 @@ public class Conectar {
     
     
     
-    public static Connection conectar(){
+    public static Connection conmysql(){
         Properties p = new Properties();
         try {
             
             p.load(new FileInputStream("propriedades.properties"));
+        } catch (IOException ex) {
+            Logger.getLogger(Conectar.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        System.out.println(p);
+        String url = p.getProperty("url");
+        Connection con = null;
+        try {
+            con = DriverManager.getConnection(url, p);
+        } catch (SQLException ex) {
+            Logger.getLogger(Conectar.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return con;
+    }
+    
+    
+    public static Connection conpg(){
+        Properties p = new Properties();
+        try {
+            
+            p.load(new FileInputStream("local.properties"));
         } catch (IOException ex) {
             Logger.getLogger(Conectar.class.getName()).log(Level.SEVERE, null, ex);
         }
